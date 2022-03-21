@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Data
-@Builder
 public class ProductResponse {
 
     private UUID id;

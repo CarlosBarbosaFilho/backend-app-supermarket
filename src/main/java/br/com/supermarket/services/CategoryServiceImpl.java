@@ -22,8 +22,8 @@ public record CategoryServiceImpl(CategoryRepository categoryRepository, Convert
 
     @Override
     public CategoryResponse create(CategoryRequest request) {
-        return (CategoryResponse)
-                convertUtils.convertToResponse((convertUtils.convertToRequest(request, Category.class)), CategoryResponse.class);
+        var entity = (Category) convertUtils.convertToRequest(request, Category.class);
+        return (CategoryResponse) convertUtils.convertToResponse(this.categoryRepository.save(entity), CategoryResponse.class);
     }
 
     @Override

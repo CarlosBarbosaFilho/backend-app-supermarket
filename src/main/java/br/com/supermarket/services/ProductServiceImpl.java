@@ -4,7 +4,6 @@ import br.com.supermarket.controller.request.product.ProductRequest;
 import br.com.supermarket.controller.response.category.CategoryResponse;
 import br.com.supermarket.controller.response.product.ProductResponse;
 import br.com.supermarket.exceptions.business.EntityNotFoundException;
-import br.com.supermarket.infrastructure.domain.category.Category;
 import br.com.supermarket.infrastructure.domain.product.Product;
 import br.com.supermarket.infrastructure.repository.ProductRepository;
 import br.com.supermarket.utils.ConvertUtils;
@@ -18,12 +17,13 @@ public record ProductServiceImpl(ProductRepository productRepository, ConvertUti
 
     @Override
     public ProductResponse create(ProductRequest request) {
-        return (ProductResponse)convertUtils.convertToRequest(convertUtils.convertToRequest(request, Product.class), ProductResponse.class);
+        var entity = (Product) convertUtils.convertToRequest(request, Product.class);
+        return (ProductResponse) convertUtils.convertToResponse(this.productRepository.save(entity), ProductResponse.class);
     }
 
     @Override
     public List<ProductResponse> products() {
-        return convertUtils.convertToListResponse(this.productRepository.findAll(), CategoryResponse.class);
+        return convertUtils.convertToListResponse(this.productRepository.findAll(), ProductResponse.class);
     }
 
     @Override
