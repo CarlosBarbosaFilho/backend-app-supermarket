@@ -1,4 +1,4 @@
-package br.com.supermarket.controller.response;
+package br.com.supermarket.controller.response.category;
 
 import lombok.Data;
 import lombok.Getter;
