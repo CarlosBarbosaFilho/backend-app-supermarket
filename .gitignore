@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### execution config ###
+mvnw
+mvnw.cmd
+*.mvn/wrapper
