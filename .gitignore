@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ### execution config ###
-mvnw
-mvnw.cmd
-*.mvn/wrapper
+/mvnw
+/mvnw.cmd
+.mvn/wrapper
