@@ -21,4 +21,9 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    private String name;
+    private String email;
+    private String document;
+    private TypeCustomer typeCustomer;
 }

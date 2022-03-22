@@ -28,6 +28,7 @@ public record ProductServiceImpl(ProductRepository productRepository, ConvertUti
 
     @Override
     public void delete(UUID id) {
+
         this.productRepository.deleteById(id);
     }
 
