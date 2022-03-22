@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ModelMapperConfiguration {
+public record ModelMapperConfiguration() {
 
     @Bean
     public ModelMapper modelMapper() {

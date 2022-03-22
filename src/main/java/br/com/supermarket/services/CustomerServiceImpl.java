@@ -21,7 +21,7 @@ public record CustomerServiceImpl(CustomerRepository customerRepository, Convert
     }
 
     @Override
-    public List<CustomerResponse> products() {
+    public List<CustomerResponse> customers() {
         return convertUtils.convertToListResponse(this.customerRepository.findAll(), CustomerResponse.class);
     }
 

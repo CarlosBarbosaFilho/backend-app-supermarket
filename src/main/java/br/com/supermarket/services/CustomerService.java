@@ -12,7 +12,7 @@ public interface CustomerService {
 
     CustomerResponse create(CustomerResquest request);
 
-    List<CustomerResponse> products();
+    List<CustomerResponse> customers();
 
 
     void delete(UUID id);
